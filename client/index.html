@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Barre de navigation -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <a class="navbar-brand" href="#">Contacts App</a>
+      <div class="navbar-form navbar-right">
+        <button class="btn btn-md btn-success">
+          <i class="fa fa-plus-circle"></i> Ajouter
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Fin Barre de navigation -->
+
+  <main class="container">
+
+    <h1 class="text-center">Bienvenue sur l'application Contacts</h1>
+    <hr>
+    
+    <div class="row is-flex" id="contacts-list">
+
+      <!-- Fiche contact -->
+      <div class="thumbnail contact">
+        <h4 class="text-center">Gwendolyn RICHARDSON</h4>
+        <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Gwendolyn RICHARDSON">
+        <div class="caption">
+          <p class="text-center"><em>san mateo, tennessee</em></p>
+          <p class="socials">
+            <span><i class="fa fa-phone"></i> (811)-110-5190</span>
+            <span><i class="fa fa-twitter"></i> blackbear241</span>
+            <span><i class="fa fa-envelope"></i> gwendolyn.richardson@mail.com</span>
+          </p>
+          <hr>
+          <p class="text-center">
+            <a class="btn btn-default btn-xs">
+              <i class="fa fa-pencil"></i> Edit
+            </a>
+            <a class="btn btn-default btn-xs">
+              <i class="fa fa-trash"></i> Remove
+            </a>
+          </p>
+        </div>
+      </div>
+      <!-- Fin Fiche contact -->
+
+    </div>
+
+  </main>
+
+  <!-- Modal contenant le formulaire d'ajout/édition -->
+  <div class="modal fade" id="formModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Formulaire de contact</h4>
+          </div>
+          <div class="modal-body">
+            
+            <!-- formulaire d'ajout -->
+              <div class="form-group">
+                <label for="firstname">Prénom*</label>
+                <input type="text" class="form-control" id="firstname" placeholder="John" required>
+              </div>
+
+              <div class="form-group">
+                <label for="lastname">Nom*</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Adresse email*</label>
+                <input type="email" class="form-control" id="email" placeholder="example@domain.tld" required>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="city">Ville*</label>
+                  <input type="text" class="form-control" id="city" placeholder="Paris" required>
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label for="state">Région*</label>
+                  <input type="text" class="form-control" id="state" placeholder="Ile-de-France" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="twitter">Twitter</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-twitter"></i></span>
+                  <input type="text" class="form-control" id="twitter" placeholder="@username">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Téléphone mobile</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                  <input type="tel" class="form-control" id="phone" placeholder="+">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="photo">Avatar URL</label>
+                <input type="url" class="form-control" id="photo" placeholder="http://">
+              </div>
+              
+            <!-- fin formulaire d'ajout -->
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Fin de la modal -->
+  
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script src="js/app.js"></script>
+  
+</body>
+</html>

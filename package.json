@@ -1,0 +1,22 @@
+{
+  "name": "kontakts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dbinit": "mongoimport -d contacts -c contacts --jsonArray data/_users.json",
+    "dbclean": "mongo contacts --eval \"db.dropDatabase()\""
+  },
+  "author": "JM",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "mongoose": "^4.9.8"
+  }
+}
