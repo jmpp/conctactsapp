@@ -1,9 +1,17 @@
+#contacts-list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 .contact {
 	background-color: #f8f8f8;
-	flex: 1;
+    flex-grow: 0;
+	flex-shrink: 1;
+    flex-basis: 25%;
 	margin: 1em;
 	max-width: 260px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 	.contact img {
