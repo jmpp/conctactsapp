@@ -13,7 +13,7 @@ exports.findAll = function findAllContacts(req, res) {
 	ContactModel
 		.find({}) // ... va chercher tous les `contacts` présents dans la collection
 		.sort({_id:1}) // ... trie dans un ordre décroissant avec l'_id
-		.lean() // ... transforme en objet JSON pur (sans les trucs en plus de Mongoose)
+		.lean() // ... transforme en objet JSON pur (sans les méthodes et propriétés ajoutée par Mongoose)
 		.exec() // ... exécute la requête
 		.then(contacts => { // ... récupère les contacts au format JSON
 			res.status(200).json(contacts) // ... et notre serveur Express répond au client avec cet objet

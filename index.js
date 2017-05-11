@@ -29,7 +29,8 @@ app.use('/lib', express.static(path.join(__dirname, 'node_modules'))) // Redirig
 
 // Connexion à la base de données Mongo, et lancement du serveur
 require('./db')()
-	.then(() => console.log('Connexion établie avec la base MongoDB')) // La promesse a été résolue
 	.then(() => {
+    // Ici, la promesse a été résolue
+    console.log('Connexion établie avec la base MongoDB')
 		app.listen(1337, () => console.log('Le serveur écoute sur le port 1337 ...'))
 	})
