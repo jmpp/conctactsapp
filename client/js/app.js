@@ -76,9 +76,14 @@ angular
 
 				// Envoie d'un POST à notre serveur, avec les infos du nouveau contact
 				$http.post('/api/contacts', main.edit)
-					.then(function() {
+					.then(function(response) {
+						
+						// Récupération de l'ID créé par le serveur pour ce contact
+						var insertedId = response.data.id;
+						main.edit._id = insertedId; // Et assignation dans l'objet courant avant de l'ajouter au tableau
+						
 						// Si le serveur a répondu OK, on ajoute manuellement ce nouveau contact dans notre tableau main.contacts pour l'app AngularJS
-						main.contacts.unshift(main.edit)
+						main.contacts.unshift(main.edit);
 
 						main.edit = {}; // Le serveur a fait son boulot et tout s'est bien passé => on vide l'objet main.edit
 

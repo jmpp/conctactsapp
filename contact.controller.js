@@ -64,7 +64,7 @@ exports.add = function addContact(req, res) {
 
 	// ... et on tente de l'enregistrer en base
 	newContact.save()
-		.then(() => res.status(200).json({message:'Contact correctement ajouté !'}))  // Si tout s'est bien passé, alors c'est nickel
+		.then(contact => res.status(200).json({message:'Contact correctement ajouté !', id: contact._id}))  // Si tout s'est bien passé, alors c'est nickel
 		.catch(err => res.status(500).json({error: 1, message: err})) // Sinon, c'est que le modèle a refusé la sauvegarde en base, on retourne donc l'erreur au client
 
 }
